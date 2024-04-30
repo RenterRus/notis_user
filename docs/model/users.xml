@@ -1,0 +1,14 @@
+<Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Name>users</Name>
+    <Entities>
+        <Entity Name="Users" Namespace="users" Table="users">
+            <Attributes>
+                <Attribute Name="ID" DBName="id" DBType="bigserial" GoType="int64" PK="true" Nullable="Yes" Addable="true" Updatable="true" Min="0" Max="0"></Attribute>
+                <Attribute Name="Name" DBName="name" DBType="varchar(100)" GoType="string" PK="true" Nullable="Yes" Addable="true" Updatable="true" Min="0" Max="0"></Attribute>
+                <Attribute Name="Email" DBName="email" DBType="text" GoType="string" PK="true" Nullable="No" Addable="true" Updatable="true" Min="0" Max="0"></Attribute>
+                <Attribute Name="Pass" DBName="pass" DBType="text" GoType="string" PK="true" Nullable="No" Addable="true" Updatable="true" Min="0" Max="0"></Attribute>
+            </Attributes>
+        </Entity>
+    </Entities>
+</Package>
+

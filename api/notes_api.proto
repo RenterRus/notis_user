@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "/api;api";
+
+/*
+    id bigserial primary key,
+    name varchar(100),
+    email text,
+    pass text
+*/
+service Notes{
+    rpc Create(CreateRequest) returns (CreateResponse) {}
+    rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+    rpc Update(UpdateRequest) returns (UpdateResponse) {}
+}
+
+message CreateRequest {
+    string name = 1;
+    string email = 2;
+    string pass = 3;
+}
+
+message CreateResponse {
+    string message = 1;
+}
+
+message UpdateRequest {
+    // id записи
+    string token = 1;
+    string name_old = 2;
+    string name_new = 3;
+    string email_new = 4;
+    string email_old = 5;
+    string pass_new = 6;
+    string pass_old = 7;
+}
+
+message UpdateResponse {
+    string message = 1;
+}
+
+message ValidateRequest {
+    string login = 1;
+    string pass = 2;
+}
+
+message ValidateResponse {
+    string token = 1;
+    string message = 2;
+}
